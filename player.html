@@ -2,8 +2,18 @@
 <html>
 <head><meta charset="UTF-8"></head>
 <body style="margin:0;background:#000;">
-  <audio id="player" autoplay loop>
+  <audio id="player" loop>
     <source src="MELD%202026%20(f).mp3" type="audio/mpeg">
   </audio>
+  <script>
+    window.onload = function() {
+      var audio = document.getElementById('player');
+      audio.play().catch(function() {
+        document.body.addEventListener('click', function() {
+          audio.play();
+        });
+      });
+    };
+  </script>
 </body>
 </html>
